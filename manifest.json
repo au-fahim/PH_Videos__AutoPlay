@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "PH Videos Auto-Play",
   "version": "1.2",
-  "description": "In Programming Hero course, this extension automatically plays the next video in the module when the current one finishes.",
+  "description": "The extension automatically plays the next video in the module when the current one finishes.",
   "permissions": [
     "storage"
   ],
