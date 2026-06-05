@@ -1,32 +1,35 @@
 // content.js
+console.log("Course Auto-Player extension loaded.");
 
-function initAutoPlay() {
-    // Attempt to find the video element on the page
-    const videoElement = document.querySelector('video');
+function setupAutoPlay() {
+    // Check the page every 2 seconds to handle dynamic SPA loading
+    setInterval(() => {
+        // Target the specific Shaka video element from the DOM
+        const videoElement = document.querySelector('video.shaka-video');
 
-    if (videoElement) {
-        console.log("Auto-player: Video detected. Listening for the end...");
-        
-        // Listen for the video to finish
-        videoElement.addEventListener('ended', () => {
-            console.log("Auto-player: Video ended. Searching for the Next button...");
+        // If the video exists and we haven't attached our listener yet
+        if (videoElement && !videoElement.dataset.autoPlayerAttached) {
+            console.log("Auto-player: Video found. Listening for the end...");
             
-            // TODO: We need the exact CSS selector for the 'Next' button
-            const nextButton = document.querySelector('.REPLACE_WITH_ACTUAL_CLASS'); 
-            
-            if (nextButton) {
-                nextButton.click();
-                console.log("Auto-player: Navigating to the next video!");
-            } else {
-                console.error("Auto-player: 'Next' button not found in the DOM.");
-            }
-        });
-    } else {
-        // Single Page Applications (SPAs) often take a moment to load the DOM.
-        // If the video isn't there yet, try again in 2 seconds.
-        setTimeout(initAutoPlay, 2000);
-    }
+            // Mark this specific video element so we don't attach duplicate listeners
+            videoElement.dataset.autoPlayerAttached = "true";
+
+            videoElement.addEventListener('ended', () => {
+                console.log("Auto-player: Video ended. Searching for Next button...");
+                
+                // Target the Next button using the specific classes
+                const nextButton = document.querySelector('.btn.next-button');
+                
+                if (nextButton) {
+                    console.log("Auto-player: Navigating to the next video!");
+                    nextButton.click();
+                } else {
+                    console.log("Auto-player: 'Next' button not found. You might be at the end of the module.");
+                }
+            });
+        }
+    }, 2000); 
 }
 
-// Start the initialization
-initAutoPlay();
+// Initialize the continuous check
+setupAutoPlay();
