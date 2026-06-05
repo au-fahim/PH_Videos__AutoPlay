@@ -1,16 +1,15 @@
-// content.js
-console.log("Course Auto-Player extension loaded.");
+// console.log("PH Videos Auto-Play extension loaded.");
 
 function setupAutoPlay() {
     setInterval(() => {
         const videoElement = document.querySelector('video.shaka-video');
 
         if (videoElement && !videoElement.dataset.autoPlayerAttached) {
-            console.log("Auto-player: Video found. Listening for the end...");
+            // console.log("Auto-player: Video found. Listening for the end...");
             videoElement.dataset.autoPlayerAttached = "true";
 
             videoElement.addEventListener('ended', () => {
-                console.log("Auto-player: Video ended. Checking user settings...");
+                // console.log("Auto-player: Video ended. Checking user settings...");
                 
                 // CHECK STORAGE BEFORE CLICKING
                 chrome.storage.local.get(['isAutoPlayEnabled'], (result) => {
@@ -20,13 +19,13 @@ function setupAutoPlay() {
                     if (autoPlayOn) {
                         const nextButton = document.querySelector('.btn.next-button');
                         if (nextButton) {
-                            console.log("Auto-player: Navigating to the next video!");
+                            // console.log("Auto-player: Navigating to the next video!");
                             nextButton.click();
                         } else {
-                            console.log("Auto-player: 'Next' button not found.");
+                            // console.log("Auto-player: 'Next' button not found.");
                         }
                     } else {
-                        console.log("Auto-player: Skipped. Auto-play is toggled OFF.");
+                        // console.log("Auto-player: Skipped. Auto-play is toggled OFF.");
                     }
                 });
             });

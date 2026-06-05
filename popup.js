@@ -11,6 +11,6 @@ chrome.storage.local.get(['isAutoPlayEnabled'], (result) => {
 // 2. Listen for clicks on the toggle and save the new state
 toggle.addEventListener('change', () => {
     chrome.storage.local.set({ isAutoPlayEnabled: toggle.checked }, () => {
-        console.log("Settings saved: Auto-Play is now", toggle.checked);
+        // console.log("Settings saved: Auto-Play is now", toggle.checked);
     });
 });
