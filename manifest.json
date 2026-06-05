@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Course Auto-Player",
+  "version": "1.0",
+  "description": "Automatically clicks the 'Next' button when a video finishes playing.",
+  "content_scripts": [
+    {
+      "matches": ["https://web.programming-hero.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
