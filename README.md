@@ -1,13 +1,13 @@
-# PH Videos <img width="26" height="26" alt="Autoplay-icon" src="https://github.com/user-attachments/assets/32f6a25a-6584-4a2e-a5cd-450eceed2b32" /> Auto-Play
+# 🚀 PH Videos <img width="26" height="26" alt="Autoplay-icon" src="https://github.com/user-attachments/assets/32f6a25a-6584-4a2e-a5cd-450eceed2b32" /> Auto-Play
 
-### Description
+### 🗒️ Description
 The extension automatically plays the next video in the module when the current one finishes.
 
 It includes a toggle switch, allowing you to easily enable or disable the videos Autoplay option.
 
 ---
 
-### Installation Guide (Developer Mode)
+### 🧩 Installation Guide (Developer Mode)
 
 Because this is a custom-built extension, you can load it directly into your browser using Chrome's Developer Mode. Follow these steps to install:
 
