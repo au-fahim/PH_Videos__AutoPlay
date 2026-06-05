@@ -31,7 +31,6 @@
             font-weight: 500;
         }
 
-        /* Modern Toggle Switch CSS */
         .switch {
             position: relative;
             display: inline-block;
@@ -87,6 +86,20 @@
         input:checked + .slider:before {
             transform: translateX(20px);
         }
+
+        .watermark {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 12px;
+        }
+        
+        .watermark span {
+            font-weight: 600;
+            color: #64748b;
+        }
     </style>
 </head>
 <body>
@@ -99,6 +112,10 @@
             <input type="checkbox" id="autoPlayToggle">
             <span class="slider"></span>
         </label>
+    </div>
+
+    <div class="watermark">
+        Crafted with 💻 by <a href="https://github.com/au-fahim/PH_Videos__AutoPlay.git" target="_blank">Fahim</a>
     </div>
 
     <script src="popup.js"></script>
